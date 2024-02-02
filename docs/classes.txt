@@ -1,0 +1,53 @@
+
+===============================================================================
+CLASSES AND INTERFACES
+===============================================================================
+
+
+Company 
+ - hasMany Employee
+ - hasMany Project
+ - name
+
+Employee 
+ - hasOne Company
+ - hasOne Role
+ - belongsTo Team
+ - hasOne Badge
+ - hasOne Company
+ - hasOne PM
+ - hasMany Task
+ - firstname
+ - lastname
+ - age 
+ 
+Project
+ - hasMany Tasks
+ - hasOne PM 
+ - name
+ - description
+
+Task
+ - hasMany DEV
+ - hasMany commit 
+
+ - description
+ - commits
+ - status
+ - deadline
+ 
+Team
+
+
+Badge
+ - code
+ - expiration
+
+
+Role
+ - PM
+ - CEO
+ - DEV
+ 
+ 
+
