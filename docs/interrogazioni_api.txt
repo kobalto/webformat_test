@@ -32,9 +32,10 @@ curl -H "Accept: application/json" http://localhost:8000/api/get-pm/4
 curl -H  "Accept: application/json" http://localhost:8000/api/get-pm/9
 curl -H  "Accept: application/json" http://localhost:8000/api/get-pm/7
 
-
-
-
+#
+# progetti cross teams 
+#
+curl -H  "Accept: application/json" http://localhost:8000/api/get-cross-team-projects
 
 
 
