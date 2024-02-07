@@ -18,7 +18,7 @@ class Task extends Model
         'project_id'
     ];
 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

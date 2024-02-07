@@ -13,7 +13,7 @@ class Team extends Model
 
     protected $fillable = ['name', 'assignable'];
 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

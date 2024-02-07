@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Task;
 use App\Enums\Role;
 use App\Enums\TaskStatus;
+use Illuminate\Support\Collection;
 
 class Employee extends Model
 {
@@ -28,17 +29,17 @@ class Employee extends Model
         return $this->id;
     }
     
-    public function scopeSeo(Builder $builder)
+    public function scopeSeo(Builder $builder): Builder
     {
         return $builder->where('role', Role::CEO);
     }
 
-    public function scopePm(Builder $builder)
+    public function scopePm(Builder $builder): Builder
     {
         return $builder->where('role', Role::PM);
     }
 
-    public function scopeDev(Builder $builder)
+    public function scopeDev(Builder $builder): Builder
     {
         return $builder->where('role', Role::DEV);
     }
@@ -53,22 +54,22 @@ class Employee extends Model
         return $this->belongsTo(Team::class);
     }
 
-    public function getProcessingTasks()
+    public function getProcessingTasks(): Collection
     {
         return $this->tasks()->where('status', TaskStatus::IN_PROGRESS)->get();
     } 
 
-    public function isCeo()
+    public function isCeo(): bool
     {
         return $this->role === Role::CEO->value;
     }
 
-    public function isPm()
+    public function isPm(): bool
     {
         return $this->role === Role::PM->value;
     }
 
-    public function isDev()
+    public function isDev(): bool
     {
         return $this->role === Role::DEV->value;
     }
