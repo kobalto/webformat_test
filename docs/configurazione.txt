@@ -1,5 +1,9 @@
+# sofware utilizzato
+
 php 8.1
 Laravel 10
+
+# implementazioni
 
 #
 # ruoli app\Enums\ 
@@ -38,8 +42,17 @@ Team.php
 #
 # migrazioni
 #
-
+2024_02_06_092923_create_teams_table.php
+2024_02_06_101057_create_employees_table.php
+2024_02_06_101310_create_projects_table.php
+2024_02_06_160701_create_tasks_table.php
+2024_02_06_171904_create_employee_task_table.php
 
 #
 # data seeding
 #
+DatabaseSeeder.php  
+EmployeeSeeder.php  
+ProjectSeeder.php  
+TaskSeeder.php  
+TeamSeeeder.php
