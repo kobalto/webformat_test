@@ -37,6 +37,13 @@ curl -H  "Accept: application/json" http://localhost:8000/api/get-pm/7
 #
 curl -H  "Accept: application/json" http://localhost:8000/api/get-cross-team-projects
 
+#
+# nuovo dev
+#
+curl -H  "Accept: application/json" -d "firstname=Charlie&lastname=Brox&team_id=3"  http://localhost:8000/api/employees
+
+
+
 
 
 
