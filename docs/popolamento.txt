@@ -1,0 +1,9 @@
+
+#
+# migration and seeding
+# dopo aver creato e configurato il database nel file .env
+#
+
+
+php artisan migrate --seed
+

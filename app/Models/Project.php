@@ -25,4 +25,33 @@ class Project extends Model
     {
         return $this->hasMany(Task::class);
     }
+
+    public static function crossTeam()
+    {
+        $crossteam = [];
+
+        $projects = Project::all();
+
+        if ($projects->count() > 0)
+        {
+            foreach ($projects as $project)
+            {
+                $tasks = $project->tasks();
+                if ($tasks->count() > 0)
+                {
+                    foreach ($tasks as $task)
+                    {
+                        $teams = $task->developers()->get()->unique('team_id');
+                        if ($teams->count() > 1)
+                        {
+                            $crossteam[] = $project->name;
+                        }
+                    }
+   
+                }
+            }
+        }
+
+        return $crossteam;
+    }
 }

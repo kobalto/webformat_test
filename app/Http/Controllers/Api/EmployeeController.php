@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\StoreEmployeeRequest;
-use App\Http\Requests\UpdateEmployeeRequest;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Employee;
+use App\Enums\Role;
 
 class EmployeeController extends Controller
 {
@@ -20,45 +20,15 @@ class EmployeeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreEmployeeRequest $request)
+    public function store(Request $request)
     {
-        //
+        $employee = Employee::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'role' => Role::DEV,
+            'team_id' => $request->team_id,
+            'pm_id' => Employee::Pm()->get()->random()->getId()
+        ]);
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Employee $employee)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateEmployeeRequest $request, Employee $employee)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Employee $employee)
-    {
-        //
-    }
-
-    public function processingTasks()
-    {
-        return [];
-    } 
-
-    public function getPm()
-    {
-
-    }
-
-
 
 }

@@ -1,7 +1,40 @@
+#
+# test dipendenti distinti per ruolo
+#
+curl -H  "Accept: application/json"  http://localhost:8000/api/ceo
+curl -H  "Accept: application/json"  http://localhost:8000/api/project-manager
+curl -H  "Accept: application/json"  http://localhost:8000/api/developers
+
+#
 # associazione tra developer e task
 # 
+curl -H  "Accept: application/json" -d ""  http://localhost:8000/api/detach-task/7/23
+curl -H  "Accept: application/json" -d ""  http://localhost:8000/api/assign-task/7/23
+curl -H  "Accept: application/json" -d ""  http://localhost:8000/api/assign-task/7/24
+curl -H  "Accept: application/json" -d ""  http://localhost:8000/api/assign-task/7/15
+curl -H  "Accept: application/json" -d ""  http://localhost:8000/api/assign-task/7/10
 
-curl -H  "Accept: application/json" -d ""  http://localhost:8000/api/assign-task/9/17
+#
+# rimozione tra developer e task
+#
+curl -H  "Accept: application/json" -d ""  http://localhost:8000/api/detach-task/7/24
+
+#
+# task in elaborazione per un developer
+#
+curl -H "Accept: application/json" http://localhost:8000/api/processing-tasks/4
+curl -H "Accept: application/json"  http://localhost:8000/api/processing-tasks/9
+
+#
+# pm di riferimento di un developer 
+#
+curl -H "Accept: application/json" http://localhost:8000/api/get-pm/4
+curl -H  "Accept: application/json" http://localhost:8000/api/get-pm/9
+curl -H  "Accept: application/json" http://localhost:8000/api/get-pm/7
+
+
+
+
 
 
 

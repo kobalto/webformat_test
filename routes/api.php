@@ -1,16 +1,14 @@
 <?php
 
-use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\CeoController;
 use App\Http\Controllers\Api\PmController;
 use App\Http\Controllers\Api\DevController;
 use App\Http\Controllers\Api\DevPmController;
-
-// use App\Http\Controllers\Api\TaskController;
 use App\Http\Controllers\Api\ProcessingTasksController;
 use App\Http\Controllers\Api\AssignTaskController;
 use App\Http\Controllers\Api\DetachTaskController;
-use App\Http\Controllers\Api\CrossTeamController;
+use App\Http\Controllers\Api\CrossTeamProjectsController;
+use App\Http\Controllers\Api\EmployeeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -40,9 +38,9 @@ Route::post('/assign-task/{employee_id}/{task_id}', AssignTaskController::class)
 
 Route::post('/detach-task/{employee_id}/{task_id}', DetachTaskController::class);
 
-// Route::get('/get-cross-team-projects', CrossTeamController::class);
+Route::get('/get-cross-team-projects', CrossTeamProjectsController::class);
 
-// Route::post('/new-dev/{employee_id}', PmEmployeeController::class);
+Route::apiResource('/employees', EmployeeController::class);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

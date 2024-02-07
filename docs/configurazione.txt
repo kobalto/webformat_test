@@ -1,0 +1,45 @@
+php 8.1
+Laravel 10
+
+#
+# ruoli app\Enums\ 
+#
+Role.php
+
+#
+# stati dei task app\Enums\
+#
+TaskStatus.php
+
+#
+# controller api 
+#
+AssignTaskController.php  
+DetachTaskController.php  
+EmployeeController.php         
+ProjectController.php
+CeoController.php         
+DevController.php         
+PmController.php               
+TaskController.php
+crossTeamController.php   
+DevPmController.php       
+ProcessingTasksController.php  
+TeamController.php
+
+#
+# modelli e relazioni
+#
+Employee.php  
+Project.php  
+Task.php  
+Team.php
+
+#
+# migrazioni
+#
+
+
+#
+# data seeding
+#

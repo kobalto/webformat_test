@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Employee;
 
 class Team extends Model
 {
@@ -20,7 +21,7 @@ class Team extends Model
 
     public function developers(): HasMany
     {
-        return $this->hasMany(DevEmployee::class);
+        return $this->hasMany(Employee::class);
     }
 
 }
