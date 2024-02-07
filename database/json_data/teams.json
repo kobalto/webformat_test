@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Team CEO",
+        "assignable": false
+    },
+    {
+        "name": "Team One",
+        "assignable": true
+    },
+    {
+        "name": "Team Two",
+        "assignable": true
+    },
+    {
+        "name": "Team Three",
+        "assignable": true
+    }
+
+]

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
+use App\Http\Controllers\Controller;
 use App\Models\Employee;
 
 class EmployeeController extends Controller
@@ -13,15 +14,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return Employee::all();
     }
 
     /**
@@ -41,14 +34,6 @@ class EmployeeController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Employee $employee)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(UpdateEmployeeRequest $request, Employee $employee)
@@ -63,4 +48,17 @@ class EmployeeController extends Controller
     {
         //
     }
+
+    public function processingTasks()
+    {
+        return [];
+    } 
+
+    public function getPm()
+    {
+
+    }
+
+
+
 }
