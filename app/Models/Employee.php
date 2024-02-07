@@ -53,7 +53,6 @@ class Employee extends Model
         return $this->belongsTo(Team::class);
     }
 
-
     public function getProcessingTasks()
     {
         return $this->tasks()->where('status', TaskStatus::IN_PROGRESS)->get();
